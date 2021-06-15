@@ -3,16 +3,22 @@ package back.Entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "cars_has_equipment")
+@Table(name = "cars_has_specifications")
 public class Car_Spec extends AbstractEntity{
     @ManyToOne
-    @JoinColumn(name = "cars_ID", foreignKey = @ForeignKey(name = "fk_cars_has_equipment_cars1"))
+    @JoinColumn(name = "cars_ID", foreignKey = @ForeignKey(name = "fk_cars_has_specifications_cars1"))
     private Car car;
     @ManyToOne
     @JoinColumn(name = "specifications_ID", foreignKey = @ForeignKey(name = "fk_cars_has_specifications_specifications1"))
     private Specific spec;
     @Column(name = "value")
     String value;
+
+    public Car_Spec(){}
+    public Car_Spec(Specific spec, Car car){
+        this.car = car;
+        this.spec = spec;
+    }
 
     public Car getCar() {
         return car;

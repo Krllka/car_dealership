@@ -10,6 +10,16 @@ public class Specific extends AbstractEntity{
     @Column(name = "Name")
     String name;
 
+    transient private String value;
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
     public Specific(){}
     public Specific(String s){super(s);}
 
