@@ -43,6 +43,7 @@ public class CarDAO extends AbstractDAO<Car>
         public void delete(Car item) {
                 Session session = sessionFactory.getCurrentSession();
                 session.delete(item);
+
         }
 
         @Override
