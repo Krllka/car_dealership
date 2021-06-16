@@ -62,7 +62,7 @@ public class CarDAO extends AbstractDAO<Car>
                         item.setEquip(new ArrayList<Equip>());
                         for (Car_Spec spec: arr) {
                             save = new Specific();
-                            save.setId(spec.getId());
+                            save.setId(spec.getSpec().getId());
                             save.setName(spec.getSpec().getName());
                             save.setValue(spec.getValue());
                             System.out.println(spec.getValue());
