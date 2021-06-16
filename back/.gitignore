@@ -1,6 +1,6 @@
 HELP.md
 .properties
-
+target/
 ### STS ###
 .apt_generated
 .classpath
