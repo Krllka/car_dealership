@@ -87,7 +87,7 @@ public class CarDAO extends AbstractDAO<Car>
                 prod.setSpecs(new ArrayList<Specific>());
 
                 String currID = prod.getId();
-                prod.setSpecs(new ArrayList<Specific>());
+                prod.setEquip(new ArrayList<Equip>());
 
                Query<Car_Spec> query  = session.createQuery("from Car_Spec o where o.car.id = :currID");
                query.setParameter("currID", currID);
@@ -131,7 +131,6 @@ public class CarDAO extends AbstractDAO<Car>
                       Car_Equip car_spec =  new Car_Equip(item, film);
                       session.save(car_spec);
                   }
-
 
                 session.merge(film);
         }
