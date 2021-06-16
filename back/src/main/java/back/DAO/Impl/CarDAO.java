@@ -56,10 +56,16 @@ public class CarDAO extends AbstractDAO<Car>
                         Query<Car_Spec> query  = session.createQuery("from Car_Spec o where o.car.id = :currID");
                         query.setParameter("currID", currID);
                         List<Car_Spec> arr = query.list();
+                        Specific save;
+                        item.setSpecs(new ArrayList<Specific>());
+                        item.setEquip(new ArrayList<Equip>());
                         for (Car_Spec spec: arr) {
-                                Specific save = spec.getSpec();
-                                save.setValue(spec.getValue());
-                                item.addSpecs(save);
+                            save = new Specific();
+                            save.setId(spec.getId());
+                            save.setName(spec.getSpec().getName());
+                            save.setValue(spec.getValue());
+                            System.out.println(spec.getValue());
+                            item.addSpecs(save);
                         }
                         Query<Car_Equip> query2  = session.createQuery("from Car_Equip o where o.car.id = :currID");
                         query2.setParameter("currID", currID);
@@ -85,8 +91,11 @@ public class CarDAO extends AbstractDAO<Car>
                Query<Car_Spec> query  = session.createQuery("from Car_Spec o where o.car.id = :currID");
                query.setParameter("currID", currID);
                List<Car_Spec> arr = query.list();
+               Specific save;
                for (Car_Spec spec: arr) {
-                       Specific save = spec.getSpec();
+                       save = new Specific();
+                       save.setId(spec.getId());
+                       save.setName(spec.getSpec().getName());
                        save.setValue(spec.getValue());
                        prod.addSpecs(save);
                }

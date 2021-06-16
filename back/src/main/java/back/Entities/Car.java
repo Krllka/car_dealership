@@ -52,8 +52,7 @@ public class Car extends AbstractEntity {
         this.equip = equip;
     }
     public void addEquip(Equip equip) {
-        if(this.equip == null)
-            this.equip = new ArrayList<Equip>();
+
         this.equip.add(equip);
     }
 
@@ -65,8 +64,6 @@ public class Car extends AbstractEntity {
         return specs;
     }
     public void addSpecs(Specific spec) {
-        if(this.specs == null)
-            this.specs = new ArrayList<Specific>();
         this.specs.add(spec);
     }
 
