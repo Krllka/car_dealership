@@ -19,6 +19,9 @@ public class Worker extends AbstractEntity{
     @Column(name = "passport")
     String passport;
 
+    public Worker(){}
+    public Worker(String str){super(str);}
+
     public String getName() {
         return name;
     }
