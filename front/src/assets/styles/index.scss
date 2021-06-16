@@ -1,0 +1,61 @@
+@import "reset";
+@import "variables";
+$vs-border-color: $background-light;
+$vs-border-radius: 3px;
+$vs-component-placeholder-color: $placeholder-color;
+@import "../../../node_modules/vue-select/src/scss/vue-select";
+
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+.page {
+  margin-top: 10vh;
+  &__header {
+    text-align: center;
+    font-size: 25px;
+  }
+  &__controls {
+    margin-top: 5vh;
+    margin-bottom: 20px;
+  }
+}
+
+.button {
+  height: 30px;
+  padding: 5px 10px;
+  background-color: $background-light;
+  border: none;
+  box-shadow: 0 4px 2px $background-dark;
+  border-radius: 20px;
+  color: $text-light;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    background-color: $background-dark;
+  }
+  &:active {
+    background-color: $background-light;
+    box-shadow: 0 6px 10px $background-dark;
+  }
+}
+
+.v-select {
+  margin: 10px;
+  //width: 100%;
+}
+
+.vs__search, .vs__search:focus {
+  padding: 2px 5px;
+  margin: 0;
+  font-size: 15px;
+}
+
+.vs__selected {
+  font-size: 15px;
+  //padding: 0;
+  color: $text-dark;
+}

@@ -1,9 +1,16 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import PageCars from "@/views/PageCars";
 
 Vue.use(VueRouter);
 
-const routes = [];
+const routes = [
+  {
+    path: "/",
+    name: "PageCars",
+    component: PageCars,
+  },
+];
 
 const router = new VueRouter({
   mode: "history",
