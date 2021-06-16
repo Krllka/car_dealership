@@ -22,7 +22,24 @@ public class Car extends AbstractEntity {
 
     transient private List<Specific> specs;
     transient private List<Equip> equip;
+    transient private double del_price;
+    transient private int count;
 
+    public double getDel_price() {
+        return del_price;
+    }
+
+    public void setDel_price(double del_price) {
+        this.del_price = del_price;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
 
     public Car(){}
     public Car(String s){super(s);}

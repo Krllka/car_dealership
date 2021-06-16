@@ -61,6 +61,12 @@ public class CarDAO extends AbstractDAO<Car>
                                 save.setValue(spec.getValue());
                                 item.addSpecs(save);
                         }
+                        Query<Car_Equip> query2  = session.createQuery("from Car_Equip o where o.car.id = :currID");
+                        query2.setParameter("currID", currID);
+                        List<Car_Equip> arr2 = query2.list();
+                        for (Car_Equip spec: arr2) {
+                            item.addEquip(spec.getEquip());
+                        }
 
                 }
                 return list;
