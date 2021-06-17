@@ -18,6 +18,9 @@
                 <li class="dropdown__item">
                   <router-link to="/clients">Клиенты</router-link>
                 </li>
+                <li class="dropdown__item">
+                  <router-link to="/providers">Поставщики</router-link>
+                </li>
                 <li class="dropdown__item"><a href="#">Поставки</a></li>
                 <li class="dropdown__item">
                   <router-link to="/salons">Салоны</router-link>

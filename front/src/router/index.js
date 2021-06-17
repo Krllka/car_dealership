@@ -7,6 +7,7 @@ import PageClients from "@/views/PageClients";
 import PageSpecs from "@/views/PageSpecs";
 import PageEquips from "@/views/PageEquips";
 import PageSalons from "@/views/PageSalons";
+import PageProviders from "@/views/PageProviders";
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,11 @@ const routes = [
     path: "/salons",
     name: "PageSalons",
     component: PageSalons,
+  },
+  {
+    path: "/providers",
+    name: "PageProviders",
+    component: PageProviders,
   },
 ];
 
