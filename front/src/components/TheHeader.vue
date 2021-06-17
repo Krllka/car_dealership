@@ -9,7 +9,9 @@
           <li class="menu__item">
             <router-link to="/">Автомобили</router-link>
           </li>
-          <li class="menu__item">Рабочие</li>
+          <li class="menu__item">
+            <router-link to="/workers">Сотрудники</router-link>
+          </li>
           <li class="menu__item">Заказы</li>
           <li class="menu__item">
             <a href="#">Еще</a>
