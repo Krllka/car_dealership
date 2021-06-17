@@ -32,6 +32,12 @@ public class OrderDAO extends AbstractDAO<Order>
 
 
     @Override
+    public void edit(Order film) {
+        Session session = sessionFactory.getCurrentSession();
+        film.setPrice(film.getCar().getPrice());
+        session.update(film);
+    }
+    @Override
     public Order getById(String id) {
         Session session = sessionFactory.getCurrentSession();
         return session.get(Order.class ,id);
