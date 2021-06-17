@@ -19,7 +19,9 @@
                   <router-link to="/clients">Клиенты</router-link>
                 </li>
                 <li class="dropdown__item"><a href="#">Поставки</a></li>
-                <li class="dropdown__item"><a href="#">Характеристики</a></li>
+                <li class="dropdown__item">
+                  <router-link to="/specs">Характеристики</router-link>
+                </li>
                 <li class="dropdown__item"><a href="#">Комплектации</a></li>
               </ul>
             </div>

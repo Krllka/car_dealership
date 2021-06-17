@@ -4,6 +4,7 @@ import PageCars from "@/views/PageCars";
 import PageWorkers from "@/views/PageWorkers";
 import PageOrders from "@/views/PageOrders";
 import PageClients from "@/views/PageClients";
+import PageSpecs from "@/views/PageSpecs";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/clients",
     name: "PageClients",
     component: PageClients,
+  },
+  {
+    path: "/specs",
+    name: "PageSpecs",
+    component: PageSpecs,
   },
 ];
 
