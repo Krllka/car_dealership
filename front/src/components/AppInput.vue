@@ -34,7 +34,6 @@ export default {
 @import "../assets/styles/variables";
 
 .input {
-  width: 100%;
   height: 32px;
   font-size: 15px;
   padding: 2px 5px;
@@ -52,5 +51,6 @@ export default {
 
 .input-wrapper {
   margin: 0 10px;
+  width: 190px;
 }
 </style>

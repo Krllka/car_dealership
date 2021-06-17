@@ -56,6 +56,7 @@ export default {
 
 .modal {
   min-width: 25vw;
+  max-width: 700px;
   border: 3px solid $background-light;
   border-radius: 6px;
   box-shadow: 0 0 5px $background-light;
@@ -84,11 +85,12 @@ export default {
   &__body {
     padding: 15px 5px;
     max-height: 50vh;
+    width: 700px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
-    width: 700px;
   }
   &__footer {
     padding: 15px;

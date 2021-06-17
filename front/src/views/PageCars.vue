@@ -90,6 +90,7 @@ import AppDataTable from "@/components/AppDataTable";
 import AppList from "@/components/AppList";
 import AppModalWindow from "@/components/AppModalWindow";
 import AppInput from "@/components/AppInput";
+
 export default {
   name: "PageCars",
   components: {
@@ -184,7 +185,7 @@ export default {
       const bodiesURL = this.axios.get("http://localhost:8081/body");
       const specsURL = this.axios.get("http://localhost:8081/spec");
       const equipULR = this.axios.get("http://localhost:8081/equip");
-      this.axios
+      return this.axios
         .all([bodiesURL, specsURL, equipULR])
         .then(
           this.axios.spread((bodiesRes, specsRes, equipRes) => {
@@ -198,8 +199,9 @@ export default {
         });
     },
     addCar() {
-      this.getCarInfo();
-      this.requestBody.specs = this.specifications;
+      this.getCarInfo().finally(
+        () => (this.requestBody.specs = this.specifications)
+      );
       this.isModalVisible = true;
     },
     createCar() {

@@ -12,7 +12,7 @@
           </li>
           <li class="menu__item" @click="$router.push('/orders')">Заказы</li>
           <li class="menu__item">
-            <a href="#">Еще</a>
+            <span>Еще</span>
             <div class="dropdown">
               <ul class="dropdown__list">
                 <li class="dropdown__item">
@@ -21,7 +21,9 @@
                 <li class="dropdown__item">
                   <router-link to="/providers">Поставщики</router-link>
                 </li>
-                <li class="dropdown__item"><a href="#">Поставки</a></li>
+                <li class="dropdown__item">
+                  <router-link to="/deliveries">Поставки</router-link>
+                </li>
                 <li class="dropdown__item">
                   <router-link to="/salons">Салоны</router-link>
                 </li>

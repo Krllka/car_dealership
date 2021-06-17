@@ -18,7 +18,7 @@
         </td>
         <td class="row__data"></td>
       </tr>
-      <tr v-for="item in items" :key="item.id" class="row">
+      <tr v-for="item in filteredItems" :key="item.id" class="row">
         <td v-for="header in headers" :key="header.key" class="row__data">
           <slot :name="header.key" :tableItem="item">
             {{ item[header.key] }}
@@ -62,6 +62,45 @@ export default {
     canEdit: {
       type: Boolean,
       default: true,
+    },
+  },
+  computed: {
+    filteredItems() {
+      const filledSearch = this.headers.filter((item) => item.search);
+      if (!filledSearch.length) return this.items;
+      let result = this.items;
+      filledSearch.forEach((val) => {
+        result = result.filter((item) => {
+          if (typeof item[val.key] === "string") {
+            if (
+              item[val.key].toLowerCase().includes(val.search.toLowerCase())
+            ) {
+              return item;
+            }
+          } else if (Array.isArray(item[val.key])) {
+            for (const el in item[val.key]) {
+              if (
+                typeof item[val.key][el] === "object" &&
+                Object.values(item[val.key][el])
+                  .join(" - ")
+                  .toLowerCase()
+                  .includes(val.search.toLowerCase())
+              ) {
+                return item;
+              }
+            }
+            if (
+              item[val.key]
+                .join(", ")
+                .toLowerCase()
+                .includes(val.search.toLowerCase())
+            ) {
+              return item;
+            }
+          }
+        });
+      });
+      return result;
     },
   },
 };
