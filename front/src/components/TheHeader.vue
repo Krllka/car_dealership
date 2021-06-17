@@ -20,6 +20,9 @@
                 </li>
                 <li class="dropdown__item"><a href="#">Поставки</a></li>
                 <li class="dropdown__item">
+                  <router-link to="/salons">Салоны</router-link>
+                </li>
+                <li class="dropdown__item">
                   <router-link to="/specs">Характеристики</router-link>
                 </li>
                 <li class="dropdown__item">
