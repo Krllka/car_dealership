@@ -6,22 +6,19 @@
           <router-link to="/">База данных автосалона</router-link>
         </h1>
         <ul class="menu__list">
-          <li class="menu__item">
-            <router-link to="/">Автомобили</router-link>
+          <li class="menu__item" @click="$router.push('/')">Автомобили</li>
+          <li class="menu__item" @click="$router.push('/workers')">
+            Сотрудники
           </li>
-          <li class="menu__item">
-            <router-link to="/workers">Сотрудники</router-link>
-          </li>
-          <li class="menu__item">Заказы</li>
+          <li class="menu__item" @click="$router.push('/orders')">Заказы</li>
           <li class="menu__item">
             <a href="#">Еще</a>
             <div class="dropdown">
               <ul class="dropdown__list">
                 <li class="dropdown__item"><a href="#">Клиенты</a></li>
-                <li class="dropdown__item"><a href="#">Доставки</a></li>
-                <li class="dropdown__item"><a href="#">Спецификации</a></li>
-                <li class="dropdown__item"><a href="#">Запчасти</a></li>
-                <li class="dropdown__item"><a href="#">Сервисы</a></li>
+                <li class="dropdown__item"><a href="#">Поставки</a></li>
+                <li class="dropdown__item"><a href="#">Характеристики</a></li>
+                <li class="dropdown__item"><a href="#">Комплектации</a></li>
               </ul>
             </div>
           </li>

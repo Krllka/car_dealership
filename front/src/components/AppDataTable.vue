@@ -26,6 +26,7 @@
         </td>
         <td class="row__data actions">
           <img
+            v-if="canEdit"
             @click="$emit('editItem', item)"
             class="icon edit"
             src="../assets/icons/edit.svg"
@@ -57,6 +58,10 @@ export default {
     items: {
       type: Array,
       default: () => [],
+    },
+    canEdit: {
+      type: Boolean,
+      default: true,
     },
   },
 };

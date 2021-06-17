@@ -230,7 +230,6 @@ export default {
           this.requestBody[key] = car[key].toString();
         }
       });
-      console.log(this.requestBody);
     },
     updateCar() {
       this.axios
