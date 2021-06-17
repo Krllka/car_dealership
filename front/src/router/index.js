@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import PageCars from "@/views/PageCars";
 import PageWorkers from "@/views/PageWorkers";
 import PageOrders from "@/views/PageOrders";
+import PageClients from "@/views/PageClients";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: "/orders",
     name: "PageOrders",
     component: PageOrders,
+  },
+  {
+    path: "/clients",
+    name: "PageClients",
+    component: PageClients,
   },
 ];
 

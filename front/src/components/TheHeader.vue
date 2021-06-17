@@ -15,7 +15,9 @@
             <a href="#">Еще</a>
             <div class="dropdown">
               <ul class="dropdown__list">
-                <li class="dropdown__item"><a href="#">Клиенты</a></li>
+                <li class="dropdown__item">
+                  <router-link to="/clients">Клиенты</router-link>
+                </li>
                 <li class="dropdown__item"><a href="#">Поставки</a></li>
                 <li class="dropdown__item"><a href="#">Характеристики</a></li>
                 <li class="dropdown__item"><a href="#">Комплектации</a></li>

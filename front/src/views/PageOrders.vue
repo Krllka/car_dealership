@@ -3,7 +3,7 @@
     <div class="container">
       <h1 class="page__header">Заказы</h1>
       <div class="page__controls">
-        <button class="button" @click="addOrder">Оформить заказ</button>
+        <button class="button" @click="addOrder">Сформировать заказ</button>
       </div>
       <app-data-table
         :headers="tableHeader"
