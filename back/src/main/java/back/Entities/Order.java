@@ -21,18 +21,18 @@ public class Order extends AbstractEntity{
     @Column(name = "date")
     private Date date;
     @Column(name = "price")
-    private double pirce;
+    private double price;
 
 
     public Order(){}
     public Order(String str){super(str);}
 
-    public double getPirce() {
-        return pirce;
+    public double getPrice() {
+        return price;
     }
 
-    public void setPirce(double pirce) {
-        this.pirce = pirce;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public Date getDate() {

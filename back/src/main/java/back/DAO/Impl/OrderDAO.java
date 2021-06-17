@@ -26,6 +26,7 @@ public class OrderDAO extends AbstractDAO<Order>
     public void add(Order film) {
         Session session = sessionFactory.getCurrentSession();
         film.setDate(new Date(System.currentTimeMillis()));
+        film.setPrice(film.getCar().getPrice());
         session.save(film);
     }
 
