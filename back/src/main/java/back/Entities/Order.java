@@ -20,10 +20,20 @@ public class Order extends AbstractEntity{
     private Worker worker;
     @Column(name = "date")
     private Date date;
+    @Column(name = "price")
+    private double pirce;
 
 
     public Order(){}
     public Order(String str){super(str);}
+
+    public double getPirce() {
+        return pirce;
+    }
+
+    public void setPirce(double pirce) {
+        this.pirce = pirce;
+    }
 
     public Date getDate() {
         return date;
