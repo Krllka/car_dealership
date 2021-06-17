@@ -203,18 +203,15 @@ export default {
       this.isModalVisible = true;
     },
     createCar() {
-      console.log(this.requestBody);
       this.axios
         .post("http://localhost:8081/car", this.requestBody)
-        .then((response) => {
-          console.log(response);
+        .then(() => {
           this.getCars();
         })
         .catch((error) => {
           console.log(error);
         })
         .finally(() => {
-          console.log(this.requestBody);
           this.closeModal();
         });
     },
@@ -236,18 +233,15 @@ export default {
       console.log(this.requestBody);
     },
     updateCar() {
-      console.log(this.requestBody);
       this.axios
         .put(`http://localhost:8081/car/${this.currentCarId}`, this.requestBody)
-        .then((response) => {
-          console.log(response);
+        .then(() => {
           this.getCars();
         })
         .catch((error) => {
           console.log(error);
         })
         .finally(() => {
-          console.log(this.requestBody);
           this.closeModal();
         });
     },
