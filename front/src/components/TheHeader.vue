@@ -22,7 +22,9 @@
                 <li class="dropdown__item">
                   <router-link to="/specs">Характеристики</router-link>
                 </li>
-                <li class="dropdown__item"><a href="#">Комплектации</a></li>
+                <li class="dropdown__item">
+                  <router-link to="/equips">Комплектации</router-link>
+                </li>
               </ul>
             </div>
           </li>

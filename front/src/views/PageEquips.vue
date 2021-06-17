@@ -1,31 +1,31 @@
 <template>
   <div class="page">
     <div class="container">
-      <h1 class="page__header">Характеристики</h1>
+      <h1 class="page__header">Комплектации</h1>
       <div class="page__controls">
-        <button @click="addSpec" class="button">Добавить характеристику</button>
+        <button @click="addEquip" class="button">Добавить опцию</button>
       </div>
       <app-data-table
         :headers="tableHeaders"
-        :items="renderedSpecs"
-        @editItem="editSpec"
-        @deleteItem="deleteSpec"
+        :items="renderedEquips"
+        @editItem="editEquip"
+        @deleteItem="deleteEquip"
       />
       <app-modal-window :is-visible="isModalVisible" @closeModal="closeModal">
-        <template v-if="!editMode" #title>Добавить характеристику</template>
-        <template v-else #title>Редактировать характеристику</template>
+        <template v-if="!editMode" #title>Добавить опцию</template>
+        <template v-else #title>Редактировать опцию</template>
         <template #body>
           <app-input
             :type="'text'"
-            :placeholder="'Название характеристики'"
+            :placeholder="'Название опции'"
             v-model="requestBody.name"
           />
         </template>
         <template #footer>
-          <button v-if="!editMode" class="button" @click="createSpec">
+          <button v-if="!editMode" class="button" @click="createEquip">
             Сохранить
           </button>
-          <button v-else class="button" @click="updateSpec">Сохранить</button>
+          <button v-else class="button" @click="updateEquip">Сохранить</button>
         </template>
       </app-modal-window>
     </div>
@@ -38,18 +38,18 @@ import AppModalWindow from "@/components/AppModalWindow";
 import AppInput from "@/components/AppInput";
 
 export default {
-  name: "PageSpecs",
+  name: "PageEquips",
   components: {
-    AppDataTable,
-    AppModalWindow,
     AppInput,
+    AppModalWindow,
+    AppDataTable,
   },
   data() {
     return {
       isModalVisible: false,
       editMode: false,
-      currentSpecId: null,
-      specs: null,
+      currentEquipId: null,
+      equips: null,
       requestBody: {
         name: "",
       },
@@ -62,40 +62,40 @@ export default {
         },
         {
           key: "name",
-          value: "Название характеристики",
-          placeholder: "Поиск по харатеристике",
+          value: "Название опции",
+          placeholder: "Поиск по опции",
           search: "",
         },
       ],
     };
   },
   created() {
-    this.getSpecs();
+    this.getEquips();
   },
   computed: {
-    renderedSpecs() {
-      return this.specs;
+    renderedEquips() {
+      return this.equips;
     },
   },
   methods: {
-    getSpecs() {
+    getEquips() {
       this.axios
-        .get("http://localhost:8081/spec")
+        .get("http://localhost:8081/equip")
         .then((response) => {
-          this.specs = response.data;
+          this.equips = response.data;
         })
         .catch((error) => {
           console.log(error);
         });
     },
-    addSpec() {
+    addEquip() {
       this.isModalVisible = true;
     },
-    createSpec() {
+    createEquip() {
       this.axios
-        .post("http://localhost:8081/spec", this.requestBody)
+        .post("http://localhost:8081/equip", this.requestBody)
         .then(() => {
-          this.getSpecs();
+          this.getEquips();
         })
         .catch((error) => {
           console.log(error);
@@ -104,22 +104,22 @@ export default {
           this.closeModal();
         });
     },
-    editSpec(spec) {
-      this.currentSpecId = spec.id;
+    editEquip(equip) {
+      this.currentEquipId = equip.id;
       this.editMode = true;
       this.isModalVisible = true;
       Object.keys(this.requestBody).forEach((key) => {
-        this.requestBody[key] = spec[key];
+        this.requestBody[key] = equip[key];
       });
     },
-    updateSpec() {
+    updateEquip() {
       this.axios
         .put(
-          `http://localhost:8081/spec/${this.currentSpecId}`,
+          `http://localhost:8081/equip/${this.currentEquipId}`,
           this.requestBody
         )
         .then(() => {
-          this.getSpecs();
+          this.getEquips();
         })
         .catch((error) => {
           console.log(error);
@@ -128,11 +128,11 @@ export default {
           this.closeModal();
         });
     },
-    deleteSpec(spec) {
+    deleteEquip(equip) {
       this.axios
-        .delete(`http://localhost:8081/spec/${spec.id}`)
+        .delete(`http://localhost:8081/equip/${equip.id}`)
         .then(() => {
-          this.getSpecs();
+          this.getEquips();
         })
         .catch((error) => {
           console.log(error);
@@ -144,7 +144,7 @@ export default {
     closeModal() {
       this.isModalVisible = false;
       this.editMode = false;
-      this.currentSpecId = null;
+      this.currentEquipId = null;
       this.clearForm();
     },
   },

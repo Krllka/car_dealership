@@ -45,7 +45,7 @@ $vs-component-placeholder-color: $placeholder-color;
 
 .v-select {
   margin: 10px;
-  //width: 100%;
+  max-width: 100%;
 }
 
 .vs__search, .vs__search:focus {
